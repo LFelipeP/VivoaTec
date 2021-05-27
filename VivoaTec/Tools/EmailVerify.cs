@@ -6,7 +6,6 @@ namespace VivoaTec.Tools
 {
     public class EmailVerify
     {
-
         public static bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
