@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TodoApi.Models;
 using VivoaTec.Models;
+using VivoaTec.Tools;
 
 namespace VivoaTec.Controllers
 {
@@ -41,7 +42,7 @@ namespace VivoaTec.Controllers
             return todoItem;
         }
 
-        // PUT: api/TodoItems/5
+        // PUT: api/TodoItems/Email
         [HttpPut("{Email}")]
         public async Task<IActionResult> PutTodoItem(string Email, TodoItem todoItem)
         {
@@ -75,15 +76,22 @@ namespace VivoaTec.Controllers
         [HttpPost]
         public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem todoItem)
         {
-            Random rnd = new Random();
-            todoItem.Cartao = rnd.Next(100000000, 999999999);
-        _context.TodoItems.Add(todoItem);
-            await _context.SaveChangesAsync();
+            if (EmailVerify.IsValidEmail(todoItem.Email))
+            {
+                Random rnd = new Random();
+                todoItem.Cartao = rnd.Next(100000000, 999999999);
+                _context.TodoItems.Add(todoItem);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetTodoItem", new { Email = todoItem.Email }, todoItem.Cartao);
+                return CreatedAtAction("GetTodoItem", new { Email = todoItem.Email }, todoItem.Cartao);
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
-        // DELETE: api/TodoItems/5
+        // DELETE: api/TodoItems/Email
         [HttpDelete("{Email}")]
         public async Task<ActionResult<TodoItem>> DeleteTodoItem(string Email)
         {
