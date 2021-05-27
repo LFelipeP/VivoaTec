@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VivoaTec.Models
 {
-    public class TodoItem
+    public class Cadastro
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]

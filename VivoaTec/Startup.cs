@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using TodoApi.Models;
+using VivoaTec.Models;
 
 namespace VivoaTec
 {
@@ -20,8 +20,8 @@ namespace VivoaTec
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TodoContext>(opt =>
-               opt.UseInMemoryDatabase("TodoList"));
+            services.AddDbContext<CadastroContext>(opt =>
+               opt.UseInMemoryDatabase("CardList"));
             services.AddControllers();
         }
 
