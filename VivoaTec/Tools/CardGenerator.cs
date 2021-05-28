@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using VivoaTec.Models;
 
 namespace VivoaTec.Tools
 {

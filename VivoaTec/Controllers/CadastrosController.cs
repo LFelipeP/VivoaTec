@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -27,7 +26,7 @@ namespace VivoaTec.Controllers
             return await _context.Cadastros.ToListAsync();
         }
 
-        // GET: api/Cadastros/5
+        // GET: api/Cadastros/email@test.com
         [HttpGet("{Email}")]
         public async Task<ActionResult<Cadastro>> GetCadastro(string Email)
         {
@@ -41,7 +40,7 @@ namespace VivoaTec.Controllers
             return cadastro;
         }
 
-        // PUT: api/Cadastros/Email@test.com
+        // PUT: api/Cadastros/email@test.com
         [HttpPut("{Email}")]
         public async Task<IActionResult> PutCadastro(string Email, Cadastro cadastro)
         {
@@ -60,7 +59,7 @@ namespace VivoaTec.Controllers
             {
                 if (!CadastroExists(Email))
                 {
-                    return NotFound();
+                    return NotFound("Cadastro não encontrado");
                 }
                 else
                 {
@@ -77,19 +76,25 @@ namespace VivoaTec.Controllers
         {
             if (EmailVerify.IsValidEmail(cadastro.Email))
             {
-                cadastro.Cartao = CardGenerator.CreateCard();
-                _context.Cadastros.Add(cadastro);
-               await _context.SaveChangesAsync();
+                if (_context.Cadastros.Find(cadastro.Email) == null) {
+                    cadastro.Cartao = CardGenerator.CreateCard();
+                    _context.Cadastros.Add(cadastro);
+                    await _context.SaveChangesAsync();
 
-                return CreatedAtAction("GetCadastro", new { Email = cadastro.Email }, cadastro.Cartao);
+                    return CreatedAtAction("GetCadastro", new { Email = cadastro.Email }, cadastro.Cartao);
+                }
+                else
+                {
+                    return BadRequest("E-mail ja utilizado");
+                }
             }
             else
             {
-                return BadRequest();
+                return BadRequest("E-mail inválido");
             }
         }
 
-        // DELETE: api/Cadastros/5
+        // DELETE: api/Cadastros/email@test.com
         [HttpDelete("{Email}")]
         public async Task<ActionResult<Cadastro>> DeleteCadastro(string Email)
         {
