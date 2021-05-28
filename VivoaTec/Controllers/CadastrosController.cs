@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using VivoaTec.Models;
@@ -78,10 +77,9 @@ namespace VivoaTec.Controllers
         {
             if (EmailVerify.IsValidEmail(cadastro.Email))
             {
-                Random rnd = new Random();
-                cadastro.Cartao = rnd.Next(100000000, 999999999);
+                cadastro.Cartao = CardGenerator.CreateCard();
                 _context.Cadastros.Add(cadastro);
-                await _context.SaveChangesAsync();
+               await _context.SaveChangesAsync();
 
                 return CreatedAtAction("GetCadastro", new { Email = cadastro.Email }, cadastro.Cartao);
             }

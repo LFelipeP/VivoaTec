@@ -8,6 +8,6 @@ namespace VivoaTec.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string Email { get; set; }
-        public int Cartao { get; set; }
+        public string Cartao { get; set; }
     }
 }
