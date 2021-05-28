@@ -78,17 +78,17 @@ O código é grande então aqui mostrarei apenas como escrevi os métodos GET e 
 
 Os End-Points estabelecidos para a comunicação foram:
 
-1. **GET /api/TodoItems**:
+1. **GET /api/Cadastros**:
 
     Utilizando o método GET retorna um JSON contendo todos os cadastros salvos listados em ordem de cadastros
 
     ![Construindo%20Uma%20API%20Rest%20em%20Net%20de2a9cfaa1634634bad5d61cc4c13754/Untitled%207.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3e47c12f-4ac0-4a9c-94af-a8f53a60fdd8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210527%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210527T195145Z&X-Amz-Expires=86400&X-Amz-Signature=56b5f410e8870f9d996eced10596804c36c590fdf9f954acd39b1ff71a81af77&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
-    Ainda no /api/TodoItems é possível pesquisar apenas um cadastro passando o Email como parâmetro ficando assim: **/api/TodoItems/user@test.com**
+    Ainda no /api/Cadastros é possível pesquisar apenas um cadastro passando o Email como parâmetro ficando assim: **/api/Cadastros/user@test.com**
 
     ![Construindo%20Uma%20API%20Rest%20em%20Net%20de2a9cfaa1634634bad5d61cc4c13754/Untitled%208.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c07758d6-573e-4109-9311-ca2f15e059af/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210527%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210527T195208Z&X-Amz-Expires=86400&X-Amz-Signature=91ca3809201ecacd24b709c8dc31caab8ad76f39c11b423ac69eb16b39d51714&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
-2. **POST /api/TodoItems:**
+2. **POST /api/Cadastros:**
 
     Utilizando o método POST passando um Email no corpo da requisição retorna o numero do cartão virtual caso esteja tudo conforme o desejado (Figura 1) e retorna o erro 400: Bad Request caso tenha algo de errado. (Figura 2)
 
