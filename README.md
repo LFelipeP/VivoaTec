@@ -36,7 +36,7 @@ Primeiro criei uma classe modelo para os nossos cadastros contendo apenas os doi
 
 Assim nosso primeiro Código ficou assim:
 
-![Construindo%20Uma%20API%20Rest%20em%20Net%20de2a9cfaa1634634bad5d61cc4c13754/Untitled%201.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9ff78bd5-5803-4893-b49e-ca883bd7e872/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210527%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210527T194636Z&X-Amz-Expires=86400&X-Amz-Signature=35ba0d2381dd4528cd6f24adbe8562706df8266680910dad56451491b860eba7&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![Imgur](https://i.imgur.com/WqGsVRU.png)
 
 Feito isso iremos agora para o próximo passo.
 
@@ -46,7 +46,7 @@ O context de banco de dados é a classe principal que coordena a funcionalidade 
 
 Utilizando o pacote *Microsoft.EntityFrameworkCore.inmemory* iremos adicionar uma classe para o context do nosso cadastro, confira o código:
 
-![Construindo%20Uma%20API%20Rest%20em%20Net%20de2a9cfaa1634634bad5d61cc4c13754/Untitled%202.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c6c82d8b-1483-4a1b-944f-b5493053c7e6/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210527%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210527T194800Z&X-Amz-Expires=86400&X-Amz-Signature=8b4b3a374c307d41356f6d3c51dd7a0b2d27f12d669c1b0b564e450685314f8c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![Imgur](https://i.imgur.com/jundBLb.png)
 
 Agora com o contexto pronto temos que adicioná-lo ao nosso Startup.cs da nossa Aplicação .(Imagens Ilustrativas)
 
@@ -62,11 +62,15 @@ O código é grande então aqui mostrarei apenas como escrevi os métodos GET e 
 
 1. Método GET, Listagem e Busca por Email:
 
-    ![Construindo%20Uma%20API%20Rest%20em%20Net%20de2a9cfaa1634634bad5d61cc4c13754/Untitled%204.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ff60e0fb-356a-444c-a88c-b5b1d8049692/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210527%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210527T194937Z&X-Amz-Expires=86400&X-Amz-Signature=e16b97ef348a91e54e59e32f49d5973ad44f01ba8bdda990d59eef60029b784a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+    ![Imgur](https://i.imgur.com/QeHB2yq.png)
 
 2. Método POST, Cadastro e retorno dos Cartões Virtuais:
 
-    ![Construindo%20Uma%20API%20Rest%20em%20Net%20de2a9cfaa1634634bad5d61cc4c13754/Untitled%205.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3ab49679-3820-41d8-b0bf-b03df34517f8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210527%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210527T195013Z&X-Amz-Expires=86400&X-Amz-Signature=ee5398de564ed851b87383fe09e14060106fdf73b10cf0253e25d4b52da21fbb&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+    ![Imgur](https://i.imgur.com/WqGsVRU.png)
+    
+    Aqui também implementei o gerador de cartões de creditos
+    
+    ![Imgur](https://i.imgur.com/6KzRUBv.png)
 
     No método post resolvi implementar uma solução para a validação dos emails enviados conferindo a formatação dos emails enviados, veja:
 
