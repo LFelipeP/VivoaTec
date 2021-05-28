@@ -86,11 +86,11 @@ Os End-Points estabelecidos para a comunicação foram:
 
     Utilizando o método GET retorna um JSON contendo todos os cadastros salvos listados em ordem de cadastros
 
-    ![Construindo%20Uma%20API%20Rest%20em%20Net%20de2a9cfaa1634634bad5d61cc4c13754/Untitled%207.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3e47c12f-4ac0-4a9c-94af-a8f53a60fdd8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210527%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210527T195145Z&X-Amz-Expires=86400&X-Amz-Signature=56b5f410e8870f9d996eced10596804c36c590fdf9f954acd39b1ff71a81af77&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+    ![Imgur](https://i.imgur.com/YDOxagf.png)
 
     Ainda no /api/Cadastros é possível pesquisar apenas um cadastro passando o Email como parâmetro ficando assim: **/api/Cadastros/user@test.com**
 
-    ![Construindo%20Uma%20API%20Rest%20em%20Net%20de2a9cfaa1634634bad5d61cc4c13754/Untitled%208.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c07758d6-573e-4109-9311-ca2f15e059af/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210527%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210527T195208Z&X-Amz-Expires=86400&X-Amz-Signature=91ca3809201ecacd24b709c8dc31caab8ad76f39c11b423ac69eb16b39d51714&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+    ![Imgur](https://i.imgur.com/OrGkNDd.png)
 
 2. **POST /api/Cadastros:**
 
@@ -98,7 +98,7 @@ Os End-Points estabelecidos para a comunicação foram:
 
     Figura 1:
 
-    ![Construindo%20Uma%20API%20Rest%20em%20Net%20de2a9cfaa1634634bad5d61cc4c13754/Untitled%209.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b5c17ea8-97e6-4515-8eee-ce95c4758da4/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210527%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210527T195325Z&X-Amz-Expires=86400&X-Amz-Signature=96ef2bfb1f16d1c8383a03ab921f5f082a98a805583be42dbcf01e107f7217dc&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+    ![Imgur](https://i.imgur.com/5kbsp0F.png)
 
     Figura 2:
 
